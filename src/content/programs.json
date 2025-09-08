@@ -1,0 +1,74 @@
+[
+  {
+    "title": "After-School & Summer",
+    "blurb": "Homework help, snacks, enrichment. Ask about bus options.",
+    "cta": {
+      "label": "Enroll / Ask about buses",
+      "href": "/contact"
+    }
+  },
+{
+  "title": "AmeriCorps Volunteers (K–3)",
+  "blurb": "Reading & math support with trained tutors.",
+  "cta": { "label": "Learn more / Volunteer", "href": "/programs/americorps" }
+},
+  {
+    "title": "Backpack Program through GHFB",
+    "blurb": "Weekend food support provided by Golden Harvest Food Bank.",
+    "cta": {
+      "label": "Request weekend food support",
+      "href": "/contact"
+    }
+  },
+  {
+    "title": "Children's Literacy through Ferst Foundation",
+    "blurb": "Books and literacy support for children.",
+    "cta": {
+      "label": "Ferst Readers →",
+      "href": "https://ferstreaders.org/",
+      "external": true
+    }
+  },
+  {
+    "title": "Energy Assistance through CSRA EOA",
+    "blurb": "Help with household energy bills via CSRA Economic Opportunity Authority.",
+    "cta": {
+      "label": "Apply at CSRA EOA →",
+      "href": "https://www.csraeoa.org/",
+      "external": true
+    }
+  },
+  {
+    "title": "Golden Harvest Food Bank (GHFB)",
+    "blurb": "Food distribution partnership with GHFB.",
+    "cta": {
+      "label": "GHFB Resources →",
+      "href": "https://goldenharvest.org/",
+      "external": true
+    }
+  },
+  {
+    "title": "Mentoring Programs",
+    "blurb": "Adult mentors supporting and guiding local youth.",
+    "cta": {
+      "label": "Become a mentor",
+      "href": "/get-involved"
+    }
+  },
+  {
+    "title": "School Supply Drive",
+    "blurb": "Annual program providing students with essential school supplies.",
+    "cta": {
+      "label": "Donate supplies",
+      "href": "/get-involved"
+    }
+  },
+  {
+    "title": "Workforce Development through WIOA",
+    "blurb": "Career pathways, training, and youth employment opportunities.",
+    "cta": {
+      "label": "Explore WIOA",
+      "href": "/contact"
+    }
+  }
+]

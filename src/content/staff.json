@@ -1,0 +1,50 @@
+[
+  {
+    "name": "Jennifer Kelley",
+    "titles": ["Executive Director"],
+    "email": "jkelley@glascock.k12.ga.us",
+    "photo": "/Staff/jennifer-kelley_orig.jpg"
+  },
+  {
+    "name": "Stacy Vickrey",
+    "titles": ["Program Assistant"],
+    "email": "svickrey@glascock.k12.ga.us",
+    "photo": "/Staff/Stacy.jpeg"
+  },
+  {
+    "name": "Monice Holloway",
+    "titles": ["Chief Financial Officer"],
+    "email": "mholloway@glascock.k12.ga.us",
+    "photo": "/Staff/monice.jpg"
+  },
+  {
+    "name": "Karen Sammons",
+    "titles": ["Data Entry / Enrichment Coordinator", "WIOA Program Coordinator"],
+    "email": "ksammons@glascock.k12.ga.us",
+    "photo": "/Staff/karen-sammons.jpg"
+  },
+  {
+    "name": "Libby Belcher",
+    "titles": ["After-School Clerk, Transportation Supervisor"],
+    "email": "lbelcher@glascock.k12.ga.us",
+    "photo": "/Staff/libby.jpg"
+  },
+  {
+    "name": "Carol Denton",
+    "titles": ["Family Resource Center Project Manager"],
+    "email": "cdenton@glascock.k12.ga.us",
+    "photo": "/Staff/Carol.jpeg"
+  },
+  {
+    "name": "Heather Smith",
+    "titles": ["FRC Outreach Coordinator"],
+    "email": "hsmith@glascock.k12.ga.us",
+    "photo": "/Staff/heather-smith.jpg"
+  },
+  {
+    "name": "Katherine Perry",
+    "titles": ["CIS Site Coordinator", "WIOA Program Assistant"],
+    "email": "kperry@glascock.k12.ga.us",
+    "photo": "/Staff/katherine.jpg"
+  }
+]
