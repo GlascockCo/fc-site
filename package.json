@@ -23,10 +23,11 @@
     "prettier": "^3.6.2",
     "vite": "^7.1.2"
   },
-  "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview",
-    "deploy": "gh-pages -d dist"
-  }
+"scripts": {
+  "dev": "vite",
+  "build": "vite build",
+  "preview": "vite preview",
+  "deploy": "gh-pages -d dist",
+  "publish": "git add . && git commit -m \"update\" && git push && npm run build && npm run deploy"
+}
 }
