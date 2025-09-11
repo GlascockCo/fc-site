@@ -4,5 +4,5 @@ import { defineConfig } from "vite";
 
 export default defineConfig({
 	plugins: [react()],
-	base: "/FCCiS/", // 👈 must match the repo name exactly
+	base: "/fc-site/", // 👈 must match the repo slug in the URL
 });

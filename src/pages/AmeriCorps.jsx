@@ -2,6 +2,13 @@ import ReactMarkdown from "react-markdown";
 import volunteers from "../content/americorps-volunteers.json";
 import md from "../content/americorps.md?raw";
 
+// just list the icons you’ve dropped into public/icons/
+const fallbackIcons = [
+  `${import.meta.env.BASE_URL}icons/peep-35.png`,
+  `${import.meta.env.BASE_URL}icons/peep-61.png`,
+  `${import.meta.env.BASE_URL}icons/peep-79.png`
+];
+
 export default function AmeriCorps() {
   return (
     <section className="stack">
@@ -25,6 +32,9 @@ export default function AmeriCorps() {
               .toUpperCase()
               .slice(0, 2);
 
+            // pick a fallback icon based on index
+            const icon = fallbackIcons[i % fallbackIcons.length];
+
             return (
               <li key={`${v.name}-${i}`} className="card staff-card">
                 {v.photo ? (
@@ -36,8 +46,8 @@ export default function AmeriCorps() {
                     decoding="async"
                   />
                 ) : (
-                  <div className="staff-photo fallback" aria-hidden="true">
-                    {initials}
+                  <div className="staff-photo fallback">
+                    <img src={icon} alt={initials} />
                   </div>
                 )}
 
@@ -57,7 +67,7 @@ export default function AmeriCorps() {
       </article>
 
       <p>
-        <a className="btn small" href="/programs">
+        <a className="btn small" href="#/programs">
           ← Back to programs
         </a>
       </p>

@@ -7,6 +7,15 @@ import programs from "../content/programs.json"
 function slugify(str){
   return str.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "")
 }
+function toHashHref(href) {
+  if (!href) return "#/";
+  if (/^(https?:)?\/\//i.test(href)) return href; // external http(s)
+  if (href.startsWith("mailto:") || href.startsWith("tel:")) return href;
+
+  // internal path, make sure it works with HashRouter
+  const clean = href.startsWith("/") ? href.slice(1) : href;
+  return `#/${clean}`;
+}
 
 export default function Programs(){
   const location = useLocation()
@@ -53,7 +62,7 @@ export default function Programs(){
 
               <a
                 className="btn small"
-                href={href}
+                href={toHashHref(href)}
                 {...(cta.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
               >
                 {cta.label || defaultCTA.label}

@@ -1,50 +1,35 @@
-// import AnnouncementBar from "../components/AnnouncementBar"
-// import { getUpdates } from "../data/site"
-
-// export default function Home() {
-//   const items = getUpdates()
-//   return (
-//     <section className="stack gap">
-//       <div className="hero-banner">
-//         <div className="hero-content">
-//           <img src="/fccis.png" alt="Family Connection Logo" className="hero-logo" />
-//           <div>
-//             <h1>Neighbors helping neighbors in Glascock County</h1>
-//             <p className="hero-sub">After-school, family support, food & diapers — right here in Gibson.</p>
-//             <div className="cta-row">
-//               <a className="btn primary" href="/programs">Get Help</a>
-//               <a className="btn" href="/get-involved">Get Involved</a>
-//               <a className="btn outline" href="/contact">Call or Visit</a>
-//             </div>
-//           </div>
-//         </div>
-//       </div>
-
-//       {/* This alone renders the cards */}
-//       <AnnouncementBar items={items} />
-//     </section>
-//   )
-// }
-
-import AnnouncementBar from "../components/AnnouncementBar"
-import { getUpdates } from "../data/site"
+import { Link } from "react-router-dom";
+import AnnouncementBar from "../components/AnnouncementBar";
+import { getUpdates } from "../data/site";
 
 export default function Home() {
-  const items = getUpdates()
+  const items = getUpdates();
 
   return (
     <section className="stack gap">
       {/* HERO */}
       <div className="hero-banner">
         <div className="hero-content">
-          <img src="/fccis.png" alt="Family Connection & CIS" className="hero-logo" />
+          <img
+            src={`${import.meta.env.BASE_URL}fccis.png`}
+            alt="FCCIS Logo"
+            className="logo"
+          />
           <div>
-            <h1>Neighbors helping neighbors in Glascock County</h1>
-            <p className="hero-sub">After-school, family support, food & diapers — right here in Gibson.</p>
+            <h1>Connecting families with care and community.</h1>
+            <p className="hero-sub">
+              After-school, family support, food & diapers — right here in Gibson.
+            </p>
             <div className="cta-row">
-              <a className="btn primary" href="/programs">Get Help</a>
-              <a className="btn" href="/get-involved">Get Involved</a>
-              <a className="btn outline" href="/contact">Call or Visit</a>
+              <Link className="btn primary" to="/programs">
+                Get Help
+              </Link>
+              <Link className="btn" to="/get-involved">
+                Get Involved
+              </Link>
+              <Link className="btn outline" to="/contact">
+                Call or Visit
+              </Link>
             </div>
           </div>
         </div>
@@ -59,7 +44,7 @@ export default function Home() {
             We surround students and families with a strong community of support so they can
             succeed in school and in life. We unite neighbors, connect resources, and open doors.
           </p>
-          <a className="btn" href="/about">Learn more</a>
+          <Link className="btn" to="/about">Learn more</Link>
         </li>
 
         <li className="card">
@@ -69,7 +54,7 @@ export default function Home() {
             From after-school tutoring and mentoring to food assistance, case management,
             and workforce readiness—our programs turn that mission into everyday help.
           </p>
-          <a className="btn" href="/programs">See programs</a>
+          <Link className="btn" to="/programs">See programs</Link>
         </li>
 
         <li className="card">
@@ -79,7 +64,7 @@ export default function Home() {
             It takes a village. Local, state, and national partners power this work and expand
             opportunities for Glascock County kids and families.
           </p>
-          <a className="btn" href="/about/partners">Meet our partners</a>
+          <Link className="btn" to="/about/partners">Meet our partners</Link>
         </li>
       </ul>
 

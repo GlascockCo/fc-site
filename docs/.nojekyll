@@ -1,0 +1,13 @@
+<!-- 404.html (SPA fallback for GitHub Pages) -->
+<!DOCTYPE html><html><head>
+  <meta charset="utf-8">
+  <title>Redirecting…</title>
+  <script>
+    // Based on https://github.com/rafgraph/spa-github-pages
+    (function(l) {
+      const redirect = '/index.html?redirect=' + encodeURIComponent(l.pathname + l.search + l.hash);
+      l.replace(redirect);
+    })(window.location);
+  </script>
+  <meta http-equiv="refresh" content="0; url=/index.html">
+</head><body></body></html>

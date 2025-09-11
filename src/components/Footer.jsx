@@ -1,8 +1,7 @@
-// src/components/Footer.jsx
-import { org as ORG } from "../data/site"; // ← adjust the relative path as needed
+import { Link } from "react-router-dom";
+import { org as ORG } from "../data/site";
 
 export default function Footer({ org = ORG }) {
-  // fallbacks + safe hrefs
   const name    = org?.name ?? "Family Connections & CIS of Glascock County";
   const address = org?.address ?? "370 West Main St., Gibson, GA";
   const phone   = org?.phone;
@@ -32,13 +31,26 @@ export default function Footer({ org = ORG }) {
       </div>
 
       <div className="footer-actions">
-        <a className="btn primary" href="/get-involved">Volunteer</a>
+        {/* Internal routes use Link */}
+        <Link className="btn primary" to="/get-involved">
+          Volunteer
+        </Link>
+
+        {/* External stays <a> */}
         {donate && (
-          <a className="btn primary" href={donate} target="_blank" rel="noopener noreferrer">
+          <a
+            className="btn primary"
+            href={donate}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             Donate
           </a>
         )}
-        <a className="btn" href="/get-help">Get Help</a>
+
+        <Link className="btn" to="/programs">
+          Get Help
+        </Link>
       </div>
     </footer>
   );
