@@ -27,7 +27,7 @@ This work helps raise reading and math scores, strengthens academic skills, and 
 - Reliable, positive, and patient with young learners
 
 ## How to apply
-1. Complete the interest form: **[Apply / Volunteer](/get-involved)**
+1. Complete the interest form: **[Apply / Volunteer](#/get-involved)**
 2. We’ll contact you about next steps (background check, placement, schedule).
 
 > Questions? Email **jkelley@glascock.k12.ga.us** or call **(706) 598-0722**.

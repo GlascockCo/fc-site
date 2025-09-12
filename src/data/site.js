@@ -1,5 +1,5 @@
 export const org = {
-	name: "Family Connection & CIS of Glascock County",
+	name: "Family Connection & Communities in Schools of Glascock County",
 	shortName: "Glascock Family Connections",
 	phone: "(706) 598-0722",
 	fax: "(706) 598-0797",

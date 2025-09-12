@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { org as ORG } from "../data/site";
 
 export default function Footer({ org = ORG }) {
-  const name    = org?.name ?? "Family Connections & CIS of Glascock County";
+  const name    = org?.name ?? "Family Connections & Communities in Schools of Glascock County";
   const address = org?.address ?? "370 West Main St., Gibson, GA";
   const phone   = org?.phone;
   const phoneHref =
