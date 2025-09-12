@@ -5,7 +5,7 @@ export default function GetInvolved() {
       <h2>Get Involved / Interest Form</h2>
 
       <form
-        action="https://formspree.io/f/abcdwxyz" // ← replace with your endpoint
+        action="https://formspree.io/f/mjkezwao" // ← replace with your endpoint
         method="POST"
         className="card stack form-grid"
       >
