@@ -46,20 +46,29 @@ export default function AboutPartners(){
       </ul>
 
       {/* Financial partners list (columns on wide screens) */}
-      <article className="card">
+     <article>
         <h3>Financial Partners</h3>
-        <p className="muted">Thank you to the local churches, businesses, and individuals who make this work possible.</p>
+        <p className="muted">
+          Thank you to the local churches, businesses, and individuals who make this work possible.
+        </p>
 
-        <ul className="board-grid" style={{columns:"1", listStyle:"none", padding:0, margin:0}}>
-          {financial.map((p,i)=>(
-            <li key={i} className="board-card">
-              {p.url ? <a href={p.url} target="_blank" rel="noopener noreferrer">{p.name}</a> : p.name}
+        <ul className="partner-list">
+          {financial.map((p, i) => (
+            <li key={i}>
+              {p.url ? (
+                <a href={p.url} target="_blank" rel="noopener noreferrer">
+                  {p.name}
+                </a>
+              ) : (
+                p.name
+              )}
             </li>
           ))}
         </ul>
 
-        <p style={{marginTop:"10px"}}>
-          Want to add your organization? <a className="btn small" href="/get-involved">Become a partner</a>
+        <p style={{ marginTop: "10px" }}>
+          Want to add your organization?{" "}
+          <a className="btn small" href="/get-involved">Become a partner</a>
         </p>
       </article>
     </section>

@@ -1,6 +1,6 @@
 # Letter from the Executive Director
 
-![Jennifer Kelley headshot](public/Staff/jennifer-kelley_orig.jpg)
+![Jennifer Kelley headshot](./Staff/jennifer-kelley_orig.jpg)
 
 We are celebrating our **25th year** as an organization! We have come a long way in a short time in building a quality organization that helps the citizens of Glascock County.
 

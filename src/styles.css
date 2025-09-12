@@ -85,14 +85,191 @@ section.stack,
 /* =========================================================
    5) CARDS & GRIDS (phone-first)
    ======================================================= */
-.cards, .grid{ display:grid; gap:14px; grid-template-columns:1fr; } /* 1 col by default */
-.card, .cards article{
-  background:#fff; padding:14px; border-radius:14px; border:1px solid #e8e8e8; box-shadow:0 1px 6px rgba(0,0,0,.04);
+/* =========================================================
+   0) VARIABLES & BASE
+   ======================================================= */
+:root {
+  --gutter: clamp(14px, 4vw, 20px);
+
+  --pine:#2B6E4A; --kudzu:#6FAF6A; --clay:#B14A2B; --peach:#F7C9A9;
+  --ink:#123c2c;  --paper:#FCFCFA;
+
+  --font-sans:"Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial;
 }
 
-/* grow into multi-column at tablet+ */
-@media (min-width:700px){
-  .cards, .grid{ grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); }
+* { box-sizing: border-box; min-width: 0; }
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  font-feature-settings: "liga" 1,"calt" 1,"kern" 1;
+}
+body {
+  margin: 0;
+  font: 16px/1.6 var(--font-sans);
+  color: var(--ink);
+  background: #fbfcfb;
+  overflow-x: hidden;
+  padding-bottom: max(env(safe-area-inset-bottom), 0px);
+}
+a { color: var(--pine); text-decoration: none; }
+
+/* =========================================================
+   1) TYPOGRAPHY
+   ======================================================= */
+h1,h2,h3 { margin: 0 0 .35rem; letter-spacing: -.01em; line-height: 1.25; }
+h1 { font-weight: 800; font-size: clamp(1.25rem, 4.5vw + .6rem, 1.85rem); }
+h2 { font-weight: 700; font-size: clamp(1.05rem, 3.5vw + .4rem, 1.35rem); }
+h3 { font-weight: 600; font-size: 1.125rem; }
+.card p, article p { color: #2f3a33; }
+
+/* =========================================================
+   2) LAYOUT HELPERS
+   ======================================================= */
+.site { display: grid; min-height: 100vh; grid-template-rows: auto 1fr auto; }
+.header, .hero-banner, .content, .footer,
+section.stack, .cards, .grid {
+  padding-left: var(--gutter);
+  padding-right: var(--gutter);
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  max-width: 1080px;
+}
+.stack > * + * { margin-top: 12px; }
+.stack.gap > * + * { margin-top: 18px; }
+
+/* =========================================================
+   3) HEADER & NAV
+   ======================================================= */
+.header {
+  padding: 12px 16px;
+  border-bottom: 3px solid var(--pine);
+  background: #fff;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+  justify-content: space-between;
+}
+.brand { display: flex; align-items: center; gap: 10px; }
+.logo { height: 40px; width: auto; }
+.nav a { margin: 0 8px; padding: 6px 10px; border-radius: 8px; font-weight: 600; }
+.nav a.active { background: var(--pine); color: #fff; }
+
+/* =========================================================
+   4) HERO & BUTTONS
+   ======================================================= */
+.hero-banner {
+  background: linear-gradient(135deg,#fef6f0,#f3faf6);
+  border: 1px solid #e9efe9;
+  border-radius: 18px;
+  padding: 18px var(--gutter) 20px;
+  text-align: center;
+}
+.hero-banner h1 { margin-bottom: .25rem; }
+.hero-sub { font-size: clamp(.95rem, 3.2vw + .3rem, 1.05rem); color: #2a2a2a; margin-bottom: 1rem; }
+.btn {
+  display: inline-block;
+  padding: 9px 12px;
+  border-radius: 12px;
+  border: 1px solid var(--ink);
+  background: #fff;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.btn.primary { background: var(--clay); color: #fff; border-color: var(--clay); }
+.btn.outline { background: transparent; }
+.btn.small { padding: 6px 10px; font-size: .95rem; }
+
+/* =========================================================
+   5) CARDS & GRIDS
+   ======================================================= */
+.cards, .grid {
+  display: grid;
+  gap: 14px;
+  grid-template-columns: 1fr;
+}
+.card {
+  background: #fff;
+  padding: 14px;
+  border-radius: 14px;
+  border: 1px solid #e8e8e8;
+  box-shadow: 0 1px 6px rgba(0,0,0,.04);
+}
+
+@media (min-width:700px) {
+  .cards, .grid {
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  }
+}
+
+/* Feature cards (Home) */
+.feature-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px,1fr));
+  gap: 12px;
+  list-style: none;
+  padding: 0;
+}
+.feature-cards .card {
+  display: grid;
+  align-content: start;
+  gap: 10px;
+  min-height: 220px;
+}
+.feat-icon {
+  width: 44px; height: 44px;
+  display: grid; place-items: center;
+  border-radius: 12px; border: 1px solid #e8e8e8;
+  font-size: 1.4rem; background: #fff;
+}
+
+/* =========================================================
+   7) FORMS
+   ======================================================= */
+label.stack, .form-grid label {
+  display: flex;
+  flex-direction: column;
+  gap: .25rem;
+}
+label span { font-weight: 500; }
+
+.grid-2col, .grid.two-col {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+@media (min-width: 600px) {
+  .grid-2col, .grid.two-col {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* =========================================================
+   8) FOOTER
+   ======================================================= */
+.footer {
+  padding: 16px;
+  background: #fff;
+  border-top: 1px solid #eee;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.footer-actions .btn { margin-left: 8px; }
+
+/* =========================================================
+   9) RESPONSIVE TWEAKS
+   ======================================================= */
+@media (max-width:640px) {
+  .hero-logo { height: 56px; }
+  .hero-content { flex-direction: column; text-align: center; }
+}
+@media (min-width:1200px) {
+  body { font-size: 15.5px; }
 }
 
 /* =========================================================
@@ -123,132 +300,108 @@ section.stack,
    8) STAFF / PARTNERS / BOARD
    ======================================================= */
 /* grids */
-.staff-grid,
-.partner-grid{ align-items:start; gap:14px; }
+.staff-grid, .board-grid {
+  display: grid;
+  gap: 14px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
 
-/* card layout: phone base */
-.staff-card,
-.partner-card{
-  display:grid; grid-template-columns:72px 1fr; gap:10px 12px; align-items:start; padding:14px;
+/* card layout: staff/partner default (row style) */
+.staff-card {
+  display: grid;
+  grid-template-columns: 72px 1fr;
+  gap: 10px 12px;
+  align-items: start;
+  padding: 14px;
+  background: #fff;
+  border-radius: 14px;
+  border: 1px solid #e8e8e8;
+  box-shadow: 0 1px 6px rgba(0,0,0,.04);
 }
 
 /* avatars/logos */
-.staff-photo, .partner-logo{
-  width:72px; height:72px; border-radius:10px; border:1px solid #e8e8e8; background:#fff; object-fit:cover;
+.staff-photo, .partner-logo {
+  width: 72px;
+  height: 72px;
+  border-radius: 10px;
+  border: 1px solid #e8e8e8;
+  background: #fff;
+  object-fit: cover;
 }
-.partner-logo{ object-fit:contain; padding:6px; }
-/* Make anchor partner logos look tidy */
-.partner-logo { background:#fff; object-fit:contain; padding:8px; }
-.partner-logo.fallback { display:grid; place-items:center; background:#f4f8f5; color:#2B6E4A; font-weight:700; }
-/* Email chip goes full-width under photo+text */
-.staff-card a.btn.small[href^="mailto:"],
-.staff-card a[href^="mailto:"]{
-  grid-column:1 / -1;
-  justify-self:start;
-  display:inline-flex;
-  max-width:100%;
-  overflow:hidden;
-  text-overflow:ellipsis;
-}
-
-/* scale up at 520px */
-@media (min-width:520px){
-  .staff-card, .partner-card{ grid-template-columns:84px 1fr; gap:14px; padding:16px; }
-  .staff-photo, .partner-logo{ width:84px; height:84px; border-radius:12px; }
+.partner-logo { object-fit: contain; padding: 6px; }
+.partner-logo.fallback {
+  display: grid;
+  place-items: center;
+  background: #f4f8f5;
+  color: var(--pine);
+  font-weight: 700;
 }
 
-/* roomier still at 700px+ (matches main grid breakpoint) */
-@media (min-width:700px){
-  .staff-card, .partner-card{ grid-template-columns:96px 1fr; }
-  .staff-photo, .partner-logo{ width:96px; height:96px; }
-}
-
-/* AmeriCorps Volunteer Cards & Fallbacks */
+/* fallback avatar (initials in circle) */
 .staff-photo.fallback {
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
-  background:#f0f4f8;
-  color:#333;
-  border-radius:50%;
-  width:80px;
-  height:80px;
-  font-weight:bold;
-}
-.staff-photo.fallback span:first-child {
-  font-size:1.5rem;
-  line-height:1;
-}
-
-/* Default size (mobile-first) */
-.staff-photo {
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  overflow: hidden;
-  background: #f5f5f5;
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.staff-photo img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-/* Fallback style (when no photo) */
-.staff-photo.fallback {
   background: #f0f4f8;
   color: #333;
+  border-radius: 50%;
   font-weight: bold;
-  flex-direction: column;
 }
-
 .staff-photo.fallback span:first-child {
   font-size: 1.5rem;
   line-height: 1;
 }
 
+/* Email chip goes full width under text */
+.staff-card a[href^="mailto:"] {
+  grid-column: 1 / -1;
+  justify-self: start;
+  display: inline-flex;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  border: 1px solid var(--pine);
+  border-radius: 8px;
+  padding: 4px 8px;
+  margin-top: 4px;
+  font-size: 0.9rem;
+}
+
 /* scale up at 520px */
-@media (min-width:520px){
-  .staff-card, .partner-card {
-    grid-template-columns:84px 1fr;
-    gap:14px;
-    padding:16px;
+@media (min-width:520px) {
+  .staff-card {
+    grid-template-columns: 84px 1fr;
+    gap: 14px;
+    padding: 16px;
   }
-  .staff-photo, .partner-logo {
-    width:84px;
-    height:84px;
-  }
+  .staff-photo, .partner-logo { width: 84px; height: 84px; border-radius: 12px; }
 }
 
-/* roomier still at 700px+ (matches main grid breakpoint) */
-@media (min-width:700px){
-  .staff-card, .partner-card {
-    grid-template-columns:96px 1fr;
-  }
-  .staff-photo, .partner-logo {
-    width:96px;
-    height:96px;
-  }
+/* roomier still at 700px+ */
+@media (min-width:700px) {
+  .staff-card, .partner-card { grid-template-columns: 96px 1fr; }
+  .staff-photo, .partner-logo { width: 96px; height: 96px; }
 }
 
-/* Board list & About sub-tabs */
-.board-grid{ list-style:none; padding:0; margin:0; display:grid; gap:12px; align-items:start; }
-.board-card{ padding:16px; }
-.board-card h3{ margin-bottom:4px; }
-
-.section-nav{ display:flex; gap:8px; flex-wrap:wrap; margin-bottom:8px; justify-content:center; }
-.section-nav a{ padding:8px 10px; border:1px solid #e6e6e6; border-radius:10px; }
-.section-nav a.active{ background:var(--pine); color:#fff; border-color:var(--pine); }
-
-/* Keep the financial partners list readable on desktop */
-@media (min-width: 900px){
-  .board-grid { columns: 2; column-gap: 24px; }
-  .board-grid .board-card { break-inside: avoid; padding: 6px 0; }
+/* section nav pills */
+.section-nav {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 8px;
+  justify-content: center;
+}
+.section-nav a {
+  padding: 8px 10px;
+  border: 1px solid #e6e6e6;
+  border-radius: 10px;
+}
+.section-nav a.active {
+  background: var(--pine);
+  color: #fff;
+  border-color: var(--pine);
 }
 /* =========================================================
    9) NEWS
